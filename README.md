@@ -1,59 +1,93 @@
-# MyApp
+# Three.js Angular Application
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.6.
+A simple Angular application that demonstrates the integration of Three.js for 3D graphics. This application features an interactive 3D cube that rotates continuously and changes color when clicked.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- Interactive 3D cube with continuous rotation
+- Color-changing functionality on click
+- Orbit controls for camera manipulation (rotate, zoom, pan)
+- Responsive design that adapts to window resizing
+- Shadow effects for enhanced visual appeal
 
-```bash
-ng serve
+## Technologies Used
+
+- Angular 17+
+- Three.js
+- TypeScript
+- CSS
+
+## Prerequisites
+
+- Node.js (v14 or higher)
+- npm (v6 or higher)
+
+## Installation
+
+1. Clone the repository:
+   ```
+   git clone <repository-url>
+   cd my-app
+   ```
+
+2. Install dependencies:
+   ```
+   npm install
+   ```
+
+3. Start the development server:
+   ```
+   ng serve
+   ```
+
+4. Open your browser and navigate to `http://localhost:4200/`
+
+## Building for Production
+
+To build the application for production:
+
+```
+npm run build
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+The build artifacts will be stored in the `dist/` directory.
 
-## Code scaffolding
+## Usage
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- **Rotate the view**: Click and drag with the mouse
+- **Zoom in/out**: Use the mouse wheel
+- **Change cube color**: Click on the cube
 
-```bash
-ng generate component component-name
-```
+## Project Structure
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- `src/app/scene/scene.component.ts`: Main component that handles the Three.js scene
+- `src/app/app.component.html`: Main template with UI overlay
+- `src/app/app.component.css`: Styles for the UI overlay
 
-```bash
-ng generate --help
-```
+## Troubleshooting
 
-## Building
+### Common Issues
 
-To build the project run:
+1. **OrbitControls Import Error**:
+   If you encounter an error like:
+   ```
+   Could not resolve "three/examples/jsm/controls/OrbitControls"
+   ```
+   Make sure to include the `.js` extension in the import:
+   ```typescript
+   import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+   ```
 
-```bash
-ng build
-```
+2. **Performance Issues**:
+   - Reduce the complexity of the 3D objects
+   - Lower the shadow map resolution
+   - Disable antialiasing if needed
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## License
 
-## Running unit tests
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Acknowledgments
 
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Three.js community for the excellent documentation
+- Angular team for the framework
